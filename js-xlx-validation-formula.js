@@ -2,7 +2,6 @@ function write_ws_xml_datavalidation(validations) {
     if (validations[0].formula) {
         return write_ws_xml_datavalidationFormula(validations);
     }
-
     var o = '<dataValidations>';
     for (var i = 0; i < validations.length; i++) {
         var validation = validations[i];
@@ -13,7 +12,7 @@ function write_ws_xml_datavalidation(validations) {
     o += '</dataValidations>';
     return o;
 }
-
+// new function added to validate formulas.
 function write_ws_xml_datavalidationFormula(validations) {
     var o = '<extLst><ext uri="{CCE6A557-97BC-4b89-ADB6-D9C93CAAB3DF}" xmlns:x14="http://schemas.microsoft.com/office/spreadsheetml/2009/9/main">';
     o += '<x14:dataValidations count="1" xmlns:xm="http://schemas.microsoft.com/office/excel/2006/main">';
