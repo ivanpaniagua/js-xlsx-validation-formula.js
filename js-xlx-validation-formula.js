@@ -14,21 +14,21 @@ function write_ws_xml_datavalidation(validations) {
 // new function added to validate Range in another Spreadsheet.
 function write_ws_xml_datavalidationFormulaRange(validation) {
     var o = '<extLst><ext uri="{CCE6A557-97BC-4b89-ADB6-D9C93CAAB3DF}" xmlns:x14="http://schemas.microsoft.com/office/spreadsheetml/2009/9/main">';
-		o += '<x14:dataValidations count="1" xmlns:xm="http://schemas.microsoft.com/office/excel/2006/main">';
+	o += '<x14:dataValidations count="1" xmlns:xm="http://schemas.microsoft.com/office/excel/2006/main">';
         o += '<x14:dataValidation type="list" allowBlank="1" showInputMessage="1" showErrorMessage="1">';
         o += '<x14:formula1><xm:f>' + validation.formula + '</xm:f></x14:formula1>';
         o += '<xm:sqref>' + validation.sqref + '</xm:sqref>';
         o += '</x14:dataValidation>';
-		o += '</x14:dataValidations></ext></extLst>';
+	o += '</x14:dataValidations></ext></extLst>';
     return o;
 }
 // new function added to validate formulas.
 function write_ws_xml_datavalidationFormula(validation) {
 	var o = '<dataValidations count="1">';
-		o += '<dataValidation type="' + validation.type + '" allowBlank="1" showInputMessage="1" showErrorMessage="1" sqref="' + validation.sqref + '" >';
-		o += '<formula1>' + validation.formula + '</formula1>';
-		o += '</dataValidation>';
-		o += '</dataValidations>';
+	    o += '<dataValidation type="' + validation.type + '" allowBlank="1" showInputMessage="1" showErrorMessage="1" sqref="' + validation.sqref + '" >';
+	    o += '<formula1>' + validation.formula + '</formula1>';
+	    o += '</dataValidation>';
+	    o += '</dataValidations>';
     return o;
 }
 //You need to have the library Xlsx.js and modify the method write_ws_xml
