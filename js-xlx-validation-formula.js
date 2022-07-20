@@ -46,7 +46,7 @@ var wb = {
     Sheet1: {
       '$ref': 'A1:Z99',
       '!dataValidation': [
-        { sqref: 'B2:D2', formula: 'ISNUMBER(B2)', type: 'custom' }, // this should be the first before any list and the ref inside the ISNUMBER could be B1 OR CX
+        { sqref: 'B2:D2', formula : 'ISNUMBER(B2)', type: 'custom' }, // this should be the first before any list and the ref inside the ISNUMBER could be B1 OR CX
         { sqref: 'A1:A99', formula : 'People!F:F', type: 'list' }
       ]
     }
