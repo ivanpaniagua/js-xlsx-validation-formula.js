@@ -8,7 +8,7 @@ function write_ws_xml_datavalidation(validations) {
 		o += write_ws_xml_datavalidationFormula(validation);
 	}
     }
-    console.log(o);
+    //console.log(o);
     return o;
 }
 // new function added to validate Range in another Spreadsheet.
