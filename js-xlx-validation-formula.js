@@ -1,14 +1,14 @@
 function write_ws_xml_datavalidation(validations) {
-	var o = ''
+    var o = ''
     for (var i = 0; i < validations.length; i++) {
-		var validation = validations[i];
+	var validation = validations[i];
         if (validation.type === "list") {
-			o += write_ws_xml_datavalidationFormulaRange(validation);
-		} else {
-			o += write_ws_xml_datavalidationFormula(validation);
-		}
+		o += write_ws_xml_datavalidationFormulaRange(validation);
+	} else {
+		o += write_ws_xml_datavalidationFormula(validation);
+	}
     }
-	console.log(o);
+    console.log(o);
     return o;
 }
 // new function added to validate Range in another Spreadsheet.
@@ -31,7 +31,6 @@ function write_ws_xml_datavalidationFormula(validation) {
 		o += '</dataValidations>';
     return o;
 }
-
 //You need to have the library Xlsx.js and modify the method write_ws_xml
 function write_ws_xml(idx, opts, wb, rels) {
   // ...
@@ -53,6 +52,5 @@ var wb = {
   },
   SheetNames: ['Sheet1']
 }
-
 // Important! at the moment of export the Excel File, add the parameter ignoerEC to false. This is the last step.
 XLSX.writeFile(wb, "ExportForecast.xlsx", { ignoreEC : false });
